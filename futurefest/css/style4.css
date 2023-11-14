@@ -1,0 +1,180 @@
+@import url('https://fonts.cdnfonts.com/css/subzer0');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@300&display=swap');
+body{
+    background-image:  url('../img/background.jpg');
+    background-size: 1280px;
+}
+body, ul{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    text-align: center;
+}
+#logo{
+    font-family:  'SubZER0';
+    font-size: 40px;
+}
+a{
+    color: #E5D283;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a:hover{
+    background: #2d456d;
+    border-radius: 10px;
+}
+#header{
+    box-sizing: border-box;
+    height: 80px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #213555;
+    background-size: 100vw;
+}
+#menu{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+#menu a{
+    display: block;
+    padding: 20px;
+}
+#btn-mobile{
+    display: none;
+}
+.title{
+    color:#E5D283;
+    font-family: 'Exo 2', sans-serif;
+    margin-left: 50px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+.txt{
+    color: #E5D283;
+    font-family: 'Exo 2', sans-serif;
+    margin-left: 50px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+.pesq{
+    background-color: #E5D283;
+    color: #213555;
+    border: none;
+    border-radius: 13px;
+    padding: 12px 24px;
+    margin-left: 50px;
+    font-size: 18px;
+    margin-top: 60px;
+    transition: transform 0.3s ease-in-out;
+}
+.pesq:hover{
+    transform: scale(1.1);
+}
+.cont{
+    background-color: #213555;
+    color: #E5D283;
+    border: none;
+    border-radius: 13px;
+    padding: 12px 24px;
+    margin-left: 50px;
+    font-size: 18px;
+    margin-top: 60px;
+    transition: transform 0.3s ease-in-out;
+}
+.cont:hover{
+    transform: scale(1.1);
+}
+@media (max-width: 768px){
+    body{
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 1150px;
+    }
+    #header{
+        align-items: center;
+        padding: 0px 100vw 0px 0px;
+    }
+    #logo{
+        margin-left: 40px;
+        font-size: 32px;
+    }
+    #btn-mobile{
+        display: block;
+    }
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: #213555;
+        height: 0px;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .08);
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .4rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: #E5D283;
+    }
+    #hamburguer{
+        color: #E5D283;
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    .title{
+        margin-left: 30px;
+        font-size: 30px;    
+    }
+    .txt{
+        margin-left: 30px;
+        font-size: 22px;
+    }
+    .cont, .pesq{
+        margin-left: 30px;
+        margin-bottom: 50px;
+        font-size: 18px;
+    }
+}

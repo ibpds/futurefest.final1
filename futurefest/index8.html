@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style3.css">
+    <script type="text/javascript" src="js/script2.js"></script>
+</head>
+<body>
+    <header id="header">
+        <a id="logo" href="">PROSECURITY</a>
+        <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" onclick="toggleMenu()" aria-haspopup="true"
+        aria-controls="menu" aria-expanded="false">
+            <span id="hamburguer"></span>
+        </button>
+        <ul id="menu" role="menu">
+            <li><a href="index9.html" class="quem">Quem somos?</a></li>
+            <li><a href="index10.html" class="conteudo">Conteúdo</a></li>
+            <li><a href="index8.html" class="pesquisa">Pesquisa</a></li>
+            <li><input type="button" value="Tela inicial" class="inicio" onclick="telainicial()"></li>
+        </ul>
+        </nav>
+    </header>
+    <h1 class="title">Formulário de Escolha</h1>
+    <form id="choiceForm">
+        <label for="choice">Escolha uma opção:</label>
+        <select id="choice">
+            <option value="Opção 1">Phishing por e-mail</option>
+            <option value="Opção 2">Boletos falsos</option>
+            <option value="Opção 3">Roubo de dados bancários</option>
+            <option value="Opção 4">Roubo de identidade</option>
+            <option value="Opção 5">Copyright (Direitos autorais)</option>
+            <option value="Opção 6">Opção 6</option>
+        </select>
+        <button type="button" id="submitChoice">Enviar</button>
+    </form>
+
+    <div id="result">
+        <h2>Resultados:</h2>
+        <p>Número de usuários que já passaram por esse mesmo problema: <span id="count">0</span></p>
+    </div>
+    <script>
+        function telainicial(){
+                window.location.href = `index0.html`
+        }
+        const choices = JSON.parse(localStorage.getItem("choices")) || [];
+        function updateResult() {
+            const selectedChoice = document.getElementById("choice").value;
+            choices.push(selectedChoice);
+            const count = choices.filter(choice => choice === selectedChoice).length;
+            document.getElementById("count").textContent = count;
+            localStorage.setItem("choices", JSON.stringify(choices));
+        }
+        const submitButton = document.getElementById("submitChoice");
+        submitButton.addEventListener("click", updateResult);
+        </script>
+</body>
+</html>

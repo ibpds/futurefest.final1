@@ -1,0 +1,217 @@
+@import url('https://fonts.cdnfonts.com/css/subzer0');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@300&display=swap');
+body{
+    background-image:  url('../img/bg.jpg');
+    background-size: 1700px;
+}
+body, ul{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    text-align: center;
+}
+#logo{
+    font-family:  'SubZER0';
+    font-size: 40px;
+}
+a{
+    color: #E5D283;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a:hover{
+    background: #2d456d;
+    border-radius: 10px;
+}
+#header{
+    box-sizing: border-box;
+    height: 80px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #213555;
+    background-size: 100vw;
+}
+#menu{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+#menu a{
+    display: block;
+    padding: 20px;
+}
+#btn-mobile{
+    display: none;
+}
+.inicio{
+    background-color: #E5D283;
+    color: #213555;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 24px;
+    margin-left: auto;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 8px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.inicio:hover{
+    transform: scale(1.1);
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+.lg1{
+    margin-top: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.title{
+    margin-top: 120px;
+    color: #213555;
+}
+#choiceForm {
+    background-color: #BCC7D2;
+    color: #213555;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 15px 15px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-top: 180px;
+    margin: 20px auto;
+    width: 300px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #213555;
+    border-radius: 10px;
+}
+#submitChoice {
+    background-color: #E5D283;
+    color: #213555;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+#submitChoice:hover {
+    background-color: #e6c851;
+}
+#result {
+    background-color: #BCC7D2;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 15px 15px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin: 20px auto;
+    width: 300px;
+}
+h2 {
+    color: #213555;
+}
+p {
+    font-weight: bold;
+    color: #213555;
+}
+#count {
+    color: #213555;
+}
+@media (max-width: 768px){
+    body{
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 550px;
+    }
+    #header{
+        padding: 0px 100vw 0px 0px;
+    }
+    #logo{
+        margin-left: 40px;
+        font-size: 32px;
+    }
+    #btn-mobile{
+        display: block;
+    }
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: #213555;
+        height: 0px;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .08);
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .4rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: #E5D283;
+    }
+    #hamburguer{
+        color: #E5D283;
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    .lg1{
+        font-size: 34px;
+    }
+    .inicio{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+        width: 110px;
+    }
+}
